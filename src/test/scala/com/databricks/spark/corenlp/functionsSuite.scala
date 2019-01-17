@@ -40,6 +40,14 @@ class functionsSuite extends SparkFunSuite {
     testFunction(lemma, sentence1, expected)
   }
 
+  test("lemma2") {
+    val expected = Seq("be", "be", "the", "same", "with", "am", "?")
+    testFunction(lemma, "Is are the same with am ?", expected)
+
+    val expected4 = Seq("I", "be", "from", "china", ".")
+    testFunction(lemma, "I am from china.", expected4)
+  }
+
   test("ner") {
     val expected = Seq("ORGANIZATION", "ORGANIZATION", "O", "O", "O", "LOCATION", "O")
     testFunction(ner, sentence1, expected)

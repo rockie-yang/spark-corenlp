@@ -101,7 +101,18 @@ object functions {
   def ner = udf { sentence: String =>
     new Sentence(sentence).nerTags().asScala
   }
-
+//
+//  def filter(typ: String): Unit = {
+//    val filter_ = udf {
+//      sentence: String => {
+//        val s = new Sentence(sentence)
+//
+//
+//      }
+//    }
+//
+//
+//  }
   /**
    * Generates the semantic dependencies of the sentence.
    * @see [[Sentence#dependencyGraph]]
